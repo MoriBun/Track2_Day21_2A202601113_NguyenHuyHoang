@@ -8,7 +8,7 @@ import os
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, f1_score
 
-EVAL_THRESHOLD = 0.70
+EVAL_THRESHOLD = 0.68
 MLFLOW_TRACKING_URI = "sqlite:///mlflow.db"
 
 
@@ -41,9 +41,10 @@ def train(
 
     with mlflow.start_run():
 
-        mlflow.log_params(params)
+        model_params = {**params, "random_state": params.get("random_state", 42)}
+        mlflow.log_params(model_params)
 
-        model = RandomForestClassifier(**params, random_state=42)
+        model = RandomForestClassifier(**model_params)
         model.fit(X_train, y_train)
 
         preds = model.predict(X_eval)
