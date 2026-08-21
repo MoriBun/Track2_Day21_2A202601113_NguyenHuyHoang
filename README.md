@@ -155,10 +155,6 @@ mlops-lab/
 
 ## Cài Đặt Môi Trường
 
-Hướng dẫn đầy đủ cho Windows PowerShell, CMD, Linux và macOS: [SETUP.md](SETUP.md).
-
-Nếu dùng AWS cho Bước 2, xem [AWS_STEP2.md](AWS_STEP2.md).
-
 ### Bước chuẩn bị (thực hiện một lần)
 
 ```bash
